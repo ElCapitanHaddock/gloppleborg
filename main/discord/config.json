@@ -1,0 +1,21 @@
+{
+  "appid": "1100893359398191164",
+
+  "intents": [
+    "Guilds",
+    "GuildMessages",
+    "MessageContent",
+    "GuildMembers"
+  ],
+
+  "commands": [
+    "./commands/ping.js",
+    "./commands/gptest.js"
+  ],
+
+  "events": {
+    "ClientReady": "./events/ready.js",
+    "MessageCreate": "./events/message.js",
+    "InteractionCreate": "./events/slashcmd.js"
+  }
+}
