@@ -52,7 +52,7 @@ export default async message => {
             let reply = await message.channel.send('*Thinking...*')
 
             let attempts = 0
-            while (attempts < 3) {
+            while (attempts < 5) {
                 attempts++
 
                 let res = await gpt.chat({
@@ -69,6 +69,10 @@ export default async message => {
                     break
                 }
                 else console.log(`[FAILURE: ${res}], attempt #${attempts}`)
+            }
+            if (attempts >= 5) {
+                reply.delete()
+                message.delete()
             }
         }
     }
