@@ -1,6 +1,6 @@
 
 
-import secrets from '../secrets.json' assert { type: 'json' }
+//import secrets from '../secrets.json' assert { type: 'json' }
 import { Configuration, OpenAIApi } from "openai";
 
 
@@ -31,4 +31,4 @@ class GPTSingleton {
     }
 }
 
-export default new GPTSingleton(secrets.openai_key)
+export default new GPTSingleton(process.env.openai_key)
