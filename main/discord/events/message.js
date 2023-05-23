@@ -25,13 +25,9 @@ export default async message => {
 
             while (true) {
                 const options = { limit: 100 };
-                if (previous) {
-                    options.before = previous;
-                }
+                if (previous) options.before = previous
 
-                const messages = await message.channel.messages.fetch({
-                    limit: 100, before: previous
-                })
+                const messages = await message.channel.messages.fetch(options)
                 //16360
 
                 messages.forEach( m => {
@@ -55,7 +51,6 @@ export default async message => {
 
             let reply = await message.channel.send('*Thinking...*')
 
-            let res
             let attempts = 0
             while (attempts < 3) {
                 attempts++
