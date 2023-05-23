@@ -14,7 +14,7 @@ export default async message => {
             //check last message
             let last = ( await message.channel.messages.fetch({ limit: 2 }) ).last()
 
-            if (last.author.id === '1100893359398191164' && last.content === '*Thinking...*') {
+            if (!message.content || (last.author.id === '1100893359398191164' && last.content === '*Thinking...*')) {
                 message.delete()
                 return
             }
