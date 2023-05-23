@@ -10,7 +10,8 @@
 
   "commands": [
     "./commands/ping.js",
-    "./commands/gptest.js"
+    "./commands/gptest.js",
+    "./commands/newchat.js"
   ],
 
   "events": {

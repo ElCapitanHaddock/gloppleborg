@@ -19,9 +19,9 @@ export default {
         await interaction.deferReply()
         let res = await gpt.chat({
             model: 'gpt-3.5-turbo',
-            messages: [ {'role': 'user', 'content': m} ]
+            messages: [ {'role': 'user', 'content': m} ],
+            max_tokens: '500' //2000-character limit on Discord
         })
-        console.log(res)
         await interaction.editReply(res.choices[0].message.content)
     }
 
